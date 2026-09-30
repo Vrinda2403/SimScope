@@ -9,28 +9,20 @@ from analyzer import analyze_simulation
 
 app = FastAPI(
     title="SimuScope Analysis API",
-    version="1.0.0",
+    version="1.0.0"
 )
 
-
-# --------------------------------------------------
-# CORS
-# --------------------------------------------------
 
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "http://localhost:5173",
+        "http://localhost:5173"
     ],
     allow_credentials=True,
     allow_methods=["*"],
-    allow_headers=["*"],
+    allow_headers=["*"]
 )
 
-
-# --------------------------------------------------
-# Health Check
-# --------------------------------------------------
 
 @app.get("/")
 def root():
@@ -39,10 +31,6 @@ def root():
         "message": "SimuScope Analysis API is running"
     }
 
-
-# --------------------------------------------------
-# Analyze CSV
-# --------------------------------------------------
 
 @app.post("/api/analyze")
 async def analyze_csv(
@@ -69,12 +57,12 @@ async def analyze_csv(
         return {
             "success": True,
             "filename": file.filename,
-            "result": result,
+            "result": result
         }
 
     except Exception as e:
 
         return {
             "success": False,
-            "error": str(e),
+            "error": str(e)
         }

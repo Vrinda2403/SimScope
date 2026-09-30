@@ -3,4 +3,5 @@ uvicorn
 python-multipart
 pandas
 numpy
-sklearn
+scikit-learn
+joblib
