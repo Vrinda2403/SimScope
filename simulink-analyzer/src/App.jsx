@@ -6,3 +6,11 @@ const App = () => {
 };
 
 export default App;
+
+// import MicrobolometerParameters from "./MicrobolometerParameters";
+
+// function App() {
+//   return <MicrobolometerParameters />;
+// }
+
+// export default App;
